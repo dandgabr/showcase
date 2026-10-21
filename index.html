@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dual">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f7f3e8">
+    <meta name="description" content="Uma travessia interativa pelas capacidades do Coacus, entre um jardim solar e uma floresta lunar.">
+    <title>Coacus — Entre o Sol e a Lua</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%232c7057'/%3E%3Cpath d='M29 9a15 15 0 1 0 10 26A17 17 0 0 1 29 9' fill='%23f2c669'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css?v=13">
+    <script type="module" src="src/main.mjs?v=16"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="topo">
+      <a class="wordmark" href="#topo" aria-label="Coacus, início">
+        <span class="wordmark-orbit" aria-hidden="true"><i></i></span>
+        <span>coacus<span class="wordmark-period">.</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Capítulos da página">
+        <a href="#hero">Início</a>
+        <a href="#ecossistema">Ecossistema</a>
+        <a href="#laboratorio">Laboratório</a>
+        <a href="#constelacao">Constelação</a>
+        <a href="#atlas">Atlas</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <div class="header-controls">
+        <div class="locale-control" data-locale-control hidden>
+          <button class="locale-trigger" type="button" data-locale-trigger aria-expanded="false" aria-controls="locale-panel" aria-label="Idioma: Automático">
+            <span aria-hidden="true">◎</span><span data-locale-trigger-value>Auto · PT</span>
+          </button>
+          <div class="locale-panel" id="locale-panel" data-locale-panel hidden>
+            <fieldset>
+              <legend data-locale-legend>Idioma</legend>
+              <label><input type="radio" name="locale" value="auto" data-locale-option checked><span>Automático</span><small data-locale-effective>Idioma atual: Português (Brasil)</small></label>
+              <label><input type="radio" name="locale" value="pt-BR" data-locale-option><span lang="pt-BR" dir="auto">Português</span><bdi dir="ltr">pt-BR</bdi></label>
+              <label><input type="radio" name="locale" value="en-US" data-locale-option><span lang="en-US" dir="auto">English</span><bdi dir="ltr">en-US</bdi></label>
+            </fieldset>
+          </div>
+        </div>
+        <div class="theme-switch" role="group" aria-label="Escolher ambiente">
+          <button type="button" data-theme-choice="dual" aria-pressed="true">Dual</button>
+          <button type="button" data-theme-choice="solar" aria-pressed="false">Solar</button>
+          <button type="button" data-theme-choice="lunar" aria-pressed="false">Lunar</button>
+        </div>
+        <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>
+          <span class="motion-indicator" aria-hidden="true"></span><span data-motion-label>Pausar</span>
+        </button>
+        <button class="light-toggle" type="button" aria-pressed="false" data-light-toggle aria-label="Ativar modo leve" title="Reduz partículas e mantém o ciclo solar e lunar em movimento."><span aria-hidden="true">◒</span><span data-light-label>Leve</span></button>
+      </div>
+      <div class="story-progress" role="progressbar" aria-label="Progresso da página" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Início da página" data-story-progress hidden>
+        <span data-story-progress-fill></span>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="hero" data-story-chapter aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> UM ECOSSISTEMA EM MOVIMENTO <span class="eyebrow-index">01 — 06</span></p>
+          <h1 id="hero-title">Conhecimento<br>que <em>floresce</em><br>em qualquer mundo.</h1>
+          <p class="hero-intro">De um jardim movido pelo sol a uma floresta guardada pela lua: explore o que acontece quando conhecimento especializado encontra boas ferramentas.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#laboratorio">Explorar o laboratório <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#ecossistema">Conhecer o ecossistema <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span class="live-dot" aria-hidden="true"></span><span>Um mesmo conhecimento. Muitas formas de agir.</span></div>
+        </div>
+
+        <div class="world-stage" data-motion-scene data-sky-mode="day" aria-label="Ilustração de uma estufa solar que se transforma em floresta lunar" role="img">
+          <div class="stage-orbit orbit-one" aria-hidden="true"></div>
+          <div class="stage-orbit orbit-two" aria-hidden="true"></div>
+          <div class="world-label world-label-solar"><span>ESTUFA 01</span><span>ENERGIA COLETIVA</span></div>
+          <div class="world-label world-label-lunar"><span>BIOMA 09</span><span>REDE PROTEGIDA</span></div>
+          <div class="garden-frame" aria-hidden="true">
+            <object class="garden-art" data-scene-art data="assets/lunar-solarpunk-hero.svg?v=7" type="image/svg+xml" width="880" height="780" aria-hidden="true" tabindex="-1">
+              <img src="assets/lunar-solarpunk-hero.svg?v=7" alt="" width="880" height="780">
+            </object>
+            <div class="garden-art garden-art-fallback" data-scene-fallback data-mode="day" data-running="false" aria-hidden="true" hidden>
+              <div class="fallback-artboard">
+                <span class="fallback-night-sky" data-cycle-layer="night"></span>
+                <span class="fallback-day-sky" data-cycle-layer="day"></span>
+                <span class="fallback-stars" data-cycle-layer="night"></span>
+                <div class="fallback-sun" data-cycle-layer="day"><span class="fallback-solar-texture"></span></div>
+                <div class="fallback-moon" data-cycle-layer="night">
+                  <span class="fallback-crater crater-one"></span><span class="fallback-crater crater-two"></span><span class="fallback-crater crater-three"></span>
+                  <span class="fallback-lunar-shadow" data-cycle-layer="night"></span>
+                </div>
+                <span class="fallback-ridge"></span>
+                <span class="fallback-water"></span>
+                <span class="fallback-greenhouse" data-cycle-layer="day"></span>
+                <span class="fallback-forest" data-cycle-layer="night"></span>
+              </div>
+            </div>
+            <noscript><style>[data-scene-art]{display:none!important}.garden-art-fallback[hidden]{display:block!important}</style></noscript>
+            <canvas class="spore-canvas" data-spores aria-hidden="true"></canvas>
+            <span class="stage-coordinate coordinate-a">42° 18′ N</span>
+            <span class="stage-coordinate coordinate-b">CICLO 08 / 24</span>
+          </div>
+          <div class="stage-caption"><span class="caption-line"></span><span>DOIS BIOMAS, UMA CONSTELAÇÃO</span><span class="caption-star" aria-hidden="true">✳</span></div>
+        </div>
+
+        <div class="hero-footnote"><span>01 / 06</span><span>ROLE PARA ATRAVESSAR OS BIOMAS</span><span>↓</span></div>
+        <div class="hero-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      </section>
+
+      <section class="ecosystem section-pad" id="ecossistema" data-story-chapter aria-labelledby="ecosystem-title">
+        <div class="section-head">
+          <div><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> UM MAPA DO CONHECIMENTO <span class="eyebrow-index">02 — 06</span></p><h2 id="ecosystem-title">Uma floresta inteira<br>de <em>possibilidades.</em></h2></div>
+          <p class="section-aside">Cada especialidade é uma semente. As skills guardam o saber; os agentes ajudam a aplicá-lo; as ferramentas conectam intenção e ação.</p>
+        </div>
+        <div class="ecosystem-panorama">
+          <div class="panorama-lines" aria-hidden="true"><svg viewBox="0 0 1200 380" preserveAspectRatio="none"><path d="M0 285C150 190 220 332 390 245s230-4 370-89 235 126 440-82"/><path d="M0 326C180 226 240 365 408 282s240-7 389-91 212 103 403-72"/><path d="M0 359C180 270 278 387 445 317s237-20 390-101 210 75 365-45"/></svg></div>
+          <div class="panorama-stats" aria-label="Resumo do catálogo Coacus" data-panorama-stats>
+            <article class="stat-node stat-skills"><span class="stat-orbit" aria-hidden="true"></span><p class="stat-type">01 / SABER</p><strong data-count="skills">—</strong><span class="stat-label">skills</span><p class="stat-description">Instruções especializadas para transformar conhecimento em prática.</p></article>
+            <article class="stat-node stat-agents"><span class="stat-orbit" aria-hidden="true"></span><p class="stat-type">02 / ESPECIALISTAS</p><strong data-count="agents">—</strong><span class="stat-label">agentes</span><p class="stat-description">Papéis especializados que pensam, projetam, constroem e revisam.</p></article>
+            <article class="stat-node stat-tools"><span class="stat-orbit" aria-hidden="true"></span><p class="stat-type">03 / CONEXÕES</p><strong data-count="mcps">—</strong><span class="stat-label">MCPs</span><p class="stat-description">Pontes para descobrir o catálogo e consultar conhecimento atualizado.</p></article>
+          </div>
+          <div class="panorama-footer"><span>COACUS / MAIN</span><span data-snapshot-date>CATÁLOGO CANÔNICO</span><a href="#atlas">Ver a constelação <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="knowledge-ribbon" aria-label="Famílias de conhecimento" data-knowledge-ribbon>
+          <span>Arquitetura</span><span>Dados</span><span>Engenharia</span><span>Design</span><span>Segurança</span><span>Ciências</span><span>Orquestração</span><span>+ muitas outras trilhas</span>
+        </div>
+      </section>
+
+      <section class="laboratory section-pad" id="laboratorio" data-story-chapter aria-labelledby="laboratory-title">
+        <div class="section-head section-head-light">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> INTERAÇÕES QUE EXPLICAM <span class="eyebrow-index">03 — 06</span></p><h2 id="laboratory-title">Conhecimento<br>em <em>estado vivo.</em></h2></div>
+          <p class="section-aside">Não são efeitos decorativos. Cada gesto revela um jeito diferente de orientar, visualizar ou proteger uma interação.</p>
+        </div>
+        <div class="lab-grid">
+          <article class="demo-card demo-spotlight">
+            <header class="demo-meta"><span>01 / FOCO</span><span class="demo-skill">motion · focus</span></header>
+            <div class="spotlight-specimen" data-spotlight tabindex="0"><span class="specimen-number">A—01</span><span class="specimen-glyph" aria-hidden="true">✳</span><h3>Onde você<br>olha, floresce.</h3><p>Mova o ponteiro ou percorra com o foco.</p><span class="specimen-corner" aria-hidden="true">↗</span></div>
+            <footer class="demo-caption"><span>Spotlight sensível ao foco.</span><span class="caption-index">01</span></footer>
+          </article>
+
+          <article class="demo-card demo-growth">
+            <header class="demo-meta"><span>02 / CRESCIMENTO</span><span class="demo-skill">solar · scroll</span></header>
+            <div class="growth-specimen is-grown" data-grow><svg viewBox="0 0 420 236" role="img" aria-labelledby="growth-title"><title id="growth-title">Ilustração de brotos conectados por uma rede de micélio</title><path class="root-path" d="M205 216c-4-43-7-83 1-119 10-41 39-57 68-65M207 173c-25-28-50-37-82-39-26-2-43-14-52-35M209 193c30-27 55-31 93-26 28 4 47-3 59-26M206 156c-10-24-9-48 1-72"/><path class="growth-vein" d="M205 214c-2-57-5-108 1-144"/><path class="leaf leaf-a" d="M206 110C173 90 162 68 167 43c29 0 47 18 40 67Z"/><path class="leaf leaf-b" d="M209 84c31-24 60-29 84-16-7 29-29 45-83 36Z"/><path class="leaf leaf-c" d="M130 137c-33-2-54-19-58-40 26-8 47-1 58 40Z"/><path class="leaf leaf-d" d="M302 169c29-26 57-28 81-14-11 27-33 42-81 14Z"/><circle class="root-node" cx="205" cy="216" r="4"/><circle class="root-node" cx="207" cy="173" r="3"/><circle class="root-node" cx="205" cy="156" r="3"/></svg><span class="growth-label label-one">TRANSPORTE</span><span class="growth-label label-two">REDE DE SABER</span><button class="small-action" type="button" disabled data-grow-toggle aria-expanded="true">Recolher <span aria-hidden="true">↙</span></button></div>
+            <footer class="demo-caption"><span>Uma rede cria caminhos.</span><span class="caption-index">02</span></footer>
+          </article>
+
+          <article class="demo-card demo-moon">
+            <header class="demo-meta"><span>03 / RITMO</span><span class="demo-skill">lunar · state</span></header>
+            <div class="moon-specimen"><div class="moon-dial" data-moon-dial aria-hidden="true"><span class="moon-disc"></span><span class="moon-track"></span><span class="moon-pointer"></span><span class="moon-star star-a">✳</span><span class="moon-star star-b">·</span></div><div class="moon-readout"><span class="moon-phase-name" data-moon-name>Lua nova</span><span class="moon-phase-value" data-moon-value>00 / 08</span><label class="sr-only" for="moon-range">Fase lunar</label><input id="moon-range" type="range" min="0" max="7" value="0" step="1" disabled data-moon-range><div class="range-labels"><span>Escuro</span><span>Cheio</span></div></div></div>
+            <footer class="demo-caption"><span>Uma fase para cada estado.</span><span class="caption-index">03</span></footer>
+          </article>
+
+          <article class="demo-card demo-transition">
+            <header class="demo-meta"><span>04 / CONTEXTO</span><span class="demo-skill">state · layout</span></header>
+            <div class="transition-specimen"><div class="mini-tabs" role="tablist" aria-label="Camadas do ecossistema"><button type="button" role="tab" disabled aria-selected="true" aria-controls="layer-panel" id="tab-skills" data-layer-tab="skills">Skills</button><button type="button" role="tab" disabled aria-selected="false" aria-controls="layer-panel" id="tab-agents" data-layer-tab="agents" tabindex="-1">Agentes</button><button type="button" role="tab" disabled aria-selected="false" aria-controls="layer-panel" id="tab-tools" data-layer-tab="tools" tabindex="-1">MCPs</button></div><div class="layer-panel" role="tabpanel" id="layer-panel" aria-live="polite" aria-labelledby="tab-skills" data-layer-panel><span class="layer-symbol" aria-hidden="true">✳</span><div><strong>Uma skill é uma trilha.</strong><p>Ela reúne instruções, referências e práticas de uma especialidade.</p></div><span class="layer-count" data-layer-count>—</span></div></div>
+            <footer class="demo-caption"><span>Troque a lente, preserve o contexto.</span><span class="caption-index">04</span></footer>
+          </article>
+
+          <article class="demo-card demo-chart">
+            <header class="demo-meta"><span>05 / VISUALIZAÇÃO</span><span class="demo-skill">data · contrast</span></header>
+            <div class="chart-specimen"><div class="chart-title"><div><span class="chart-kicker">CENÁRIO FICTÍCIO · ENERGIA DO BIOMA</span><strong><span data-chart-value>68</span><small> / 100</small></strong></div><span class="chart-badge">● <span data-chart-state>REGENERANDO</span></span></div><svg class="energy-chart" viewBox="0 0 460 140" role="img" aria-labelledby="chart-title chart-description"><title id="chart-title">Visualização fictícia da energia do bioma</title><desc id="chart-description" data-chart-description>Dado demonstrativo fictício: nível de energia 68 em uma escala de zero a cem.</desc><defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#66916f" stop-opacity=".33"/><stop offset="1" stop-color="#66916f" stop-opacity="0"/></linearGradient></defs><path class="chart-gridline" d="M0 28H460M0 70H460M0 112H460"/><path class="chart-area" data-chart-area d="M0 88C40 79 53 81 89 57S150 70 191 52s60 14 97-8 56 12 89-10 51 7 83-20v126H0Z"/><path class="chart-line" data-chart-line d="M0 88C40 79 53 81 89 57S150 70 191 52s60 14 97-8 56 12 89-10 51 7 83-20"/><circle class="chart-point" data-chart-point cx="358" cy="34" r="5"/></svg><div class="chart-scale"><span>AMANHECER</span><span>MEIO-DIA</span><span>ANOITECER</span></div><label class="sr-only" for="energy-range">Ajustar energia fictícia do bioma</label><input id="energy-range" class="chart-range" type="range" min="0" max="100" value="68" disabled data-energy-range></div>
+            <footer class="demo-caption"><span>Um dado, muitas leituras acessíveis.</span><span class="caption-index">05</span></footer>
+          </article>
+
+          <article class="demo-card demo-veil">
+            <header class="demo-meta"><span>06 / INTENÇÃO</span><span class="demo-skill">privacy · reveal</span></header>
+            <div class="veil-specimen"><div class="veil-ornament" aria-hidden="true"><span></span><span></span><span></span></div><span class="veil-label">AMOSTRA FICTÍCIA · ESTADO PRIVADO</span><p class="veil-data" id="veil-data" data-veil-data>rede regenerativa</p><button class="veil-button" type="button" disabled data-veil-toggle aria-expanded="false" aria-controls="veil-data"><span aria-hidden="true">◌</span> <span data-veil-label>Revelar amostra</span></button><span class="veil-note">Nada é ocultado até um gesto deliberado.</span></div>
+            <footer class="demo-caption"><span>Intenção antes da revelação.</span><span class="caption-index">06</span></footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="constellation section-pad" id="constelacao" data-story-chapter aria-labelledby="constellation-title">
+        <div class="section-head">
+          <div><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> INTELIGÊNCIA EM REDE <span class="eyebrow-index">04 — 06</span></p><h2 id="constellation-title">Cada estrela<br>conhece um <em>caminho.</em></h2></div>
+          <p class="section-aside">Uma equipe não é uma lista de nomes. É um conjunto de olhares que se encontra para levar uma ideia adiante.</p>
+        </div>
+        <div class="constellation-layout">
+          <div class="constellation-map" aria-label="Constelação de especialidades relacionadas" data-constellation-map>
+            <svg class="constellation-lines" viewBox="0 0 640 430" aria-hidden="true"><path d="M88 111 215 75 321 152 481 88 534 208 411 333 254 342 108 270 88 111M215 75 254 342M321 152 411 333M108 270 321 152M481 88 411 333M88 111 534 208"/><path class="constellation-orbit" d="M59 218C81 79 235 32 383 60s229 121 198 238-168 149-314 126S36 357 59 218Z"/></svg>
+            <button class="constellation-node node-design" type="button" disabled aria-label="Selecionar especialidade de design" data-agent-node="design"><span class="node-star">✳</span><span>Design</span><small>UI · UX · Motion</small></button>
+            <button class="constellation-node node-engineering" type="button" disabled aria-label="Selecionar especialidade de engenharia" data-agent-node="engineering"><span class="node-star">✳</span><span>Engenharia</span><small>Frontend · Gráficos</small></button>
+            <button class="constellation-node node-data" type="button" disabled aria-label="Selecionar especialidade de dados" data-agent-node="data"><span class="node-star">✳</span><span>Dados</span><small>Busca · estrutura</small></button>
+            <button class="constellation-node node-quality" type="button" disabled aria-label="Selecionar especialidade de qualidade" data-agent-node="quality"><span class="node-star">✳</span><span>Qualidade</span><small>Acessibilidade · QA</small></button>
+            <button class="constellation-node node-orchestration" type="button" disabled aria-label="Selecionar especialidade de orquestração" data-agent-node="orchestration"><span class="node-star">✳</span><span>Orquestração</span><small>Coordenação</small></button>
+            <span class="constellation-core"><span aria-hidden="true">☼</span><span>UM OBJETIVO</span></span>
+          </div>
+          <div class="constellation-detail" aria-live="polite" aria-atomic="true"><p class="detail-kicker">ESPECIALIDADE EM FOCO</p><h3 data-agent-title>Design de interfaces</h3><p data-agent-copy>Agentes de UI, UX e movimento ajudam a dar forma, ritmo e intenção a uma experiência.</p><div class="detail-agents" data-agent-names>ui-ux-designer · ui-motion-specialist · design-qa-specialist</div><div class="flow-divider"><span>BRIEFING</span><i aria-hidden="true">→</i><span>DESIGN</span><i aria-hidden="true">→</i><span>BUILD</span><i aria-hidden="true">→</i><span>REVISÃO</span></div><p class="simulation-note"><span aria-hidden="true">ⓘ</span> A constelação e o fluxo são demonstrações visuais. Nenhum agente é executado por esta página.</p></div>
+        </div>
+      </section>
+
+      <section class="atlas section-pad" id="atlas" data-story-chapter aria-labelledby="atlas-title">
+        <div class="section-head section-head-light">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> ESCOLHA SUA PRÓXIMA TRILHA <span class="eyebrow-index">05 — 06</span></p><h2 id="atlas-title" tabindex="-1">Um atlas para<br>seguir <em>curioso.</em></h2></div>
+          <p class="section-aside">Explore o inventário completo por nome, família ou descrição. A busca acontece no navegador a partir do catálogo publicado pelo Coacus, com cache temporário neste dispositivo.</p>
+        </div>
+        <div class="atlas-shell">
+          <noscript><p class="noscript-note">Para buscar e filtrar o inventário, ative JavaScript. <a href="https://raw.githubusercontent.com/dandgabr/Coacus/main/catalog/catalog.json">Abra o catálogo publicado pelo Coacus.</a></p></noscript>
+          <div class="atlas-topline"><span>CATÁLOGO / PESQUISA LOCAL</span><span data-atlas-count>CARREGANDO CATÁLOGO…</span></div>
+          <div class="atlas-controls"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only" data-search-label>Buscar no catálogo</span><input type="search" placeholder="Busque um saber, especialidade ou conexão…" autocomplete="off" data-catalog-search><kbd>⌘ K</kbd></label><div class="filter-group" role="group" aria-label="Filtrar recursos" data-filter-group><button type="button" data-catalog-kind="all" aria-pressed="true">Tudo</button><button type="button" data-catalog-kind="skill" aria-pressed="false">Skills</button><button type="button" data-catalog-kind="agent" aria-pressed="false">Agentes</button><button type="button" data-catalog-kind="mcp" aria-pressed="false">MCPs</button></div></div>
+          <p class="sr-only" data-catalog-status role="status" aria-live="polite" aria-atomic="true"></p>
+          <div class="catalog-grid" data-catalog-results aria-busy="true"></div>
+          <div class="catalog-more" data-catalog-more hidden><button type="button" data-catalog-load-more>Carregar mais recursos</button></div>
+          <div class="atlas-empty" data-catalog-empty hidden><span aria-hidden="true">⌕</span><p>Nenhuma trilha encontrada.</p><button type="button" data-catalog-reset>Limpar busca</button><button type="button" data-catalog-retry hidden>Tentar novamente</button></div>
+          <div class="atlas-bottomline"><span>FONTES DO COACUS / BUSCA LOCAL</span><span data-atlas-footer>OS AGENTES NÃO SÃO EXECUTADOS NESTA PÁGINA</span><a href="#topo">Voltar ao início ↑</a></div>
+        </div>
+      </section>
+
+      <section class="closing section-pad" id="sobre" data-story-chapter aria-labelledby="closing-title">
+        <div class="closing-orbit" aria-hidden="true"><i></i><i></i><i></i><span>✳</span></div>
+        <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> CONSTRUÍDO COM COACUS <span class="eyebrow-index">06 — 06</span></p>
+        <h2 id="closing-title">Faça uma ideia<br>criar <em>raízes.</em></h2>
+        <p class="closing-copy">Este showcase foi pensado como uma pequena biosfera: design dá forma, engenharia constrói caminhos, movimento cria ritmo e qualidade mantém tudo acolhedor.</p>
+        <div class="closing-credits"><span>UI · UX · MOTION · GRÁFICOS · PERFORMANCE · QUALIDADE</span><a href="#topo">À superfície <span aria-hidden="true">↑</span></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="footer-mark" href="#topo">coacus<span>.</span></a><span class="footer-tagline">CONHECIMENTO QUE CRESCE EM TODAS AS DIREÇÕES.</span><div class="footer-legal"><span>© 2026 Daniel Gonçalves Araujo · AGPL-3.0</span><span class="footer-legal-summary">Software livre. Redistribuição conforme a licença. Sem garantia.</span><span class="footer-legal-links"><a href="LICENSE">Licença</a> · <a href="THIRD-PARTY-NOTICES.md">Avisos de terceiros</a> · <a href="https://github.com/dandgabr/showcase">Código-fonte</a></span></div><span class="footer-date" data-footer-date>COACUS / MAIN</span></footer>
+    <div class="sr-only" role="status" aria-live="polite" data-announcer></div>
+  </body>
+</html>

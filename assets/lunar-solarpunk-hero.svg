@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" data-mode="day" data-running="false" role="img" aria-labelledby="title description">
+  <title id="title">Horizonte entre o sol e a lua</title>
+  <desc id="description">Uma paisagem solarpunk une estufas botânicas douradas ao dia e uma floresta azul bioluminescente à noite.</desc>
+  <defs>
+    <linearGradient id="sky" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="900">
+      <stop stop-color="#122c3b"/><stop offset=".48" stop-color="#283b4b"/><stop offset="1" stop-color="#121d36"/>
+    </linearGradient>
+    <linearGradient id="day-sky-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f8d991"/><stop offset=".48" stop-color="#e9a778"/><stop offset="1" stop-color="#8c9e88"/>
+    </linearGradient>
+    <radialGradient id="sun-surface" cx="34%" cy="30%" r="72%"><stop stop-color="#fff0a3"/><stop offset=".58" stop-color="#ffd477"/><stop offset="1" stop-color="#e98952"/></radialGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#36595b"/><stop offset="1" stop-color="#162c3a"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#285565"/><stop offset="1" stop-color="#142c42"/></linearGradient>
+    <filter id="bloom"><feGaussianBlur stdDeviation="5"/></filter>
+    <clipPath id="solar-surface-clip"><circle cx="372" cy="338" r="118"/></clipPath>
+    <clipPath id="lunar-surface-clip"><circle cx="1260" cy="319" r="112"/></clipPath>
+  </defs>
+  <path id="night-sky" fill="url(#sky)" d="M0 0h1600v900H0z"/>
+  <path id="day-sky" data-day-layer="" data-cycle-layer="day" fill="url(#day-sky-gradient)" d="M0 0h1600v900H0z"/>
+  <g id="night-stars" data-night-layer="" data-cycle-layer="night" fill="#d9f5e8" opacity=".58">
+    <circle cx="1035" cy="125" r="2"/><circle cx="1124" cy="207" r="1.5"/><circle cx="1394" cy="144" r="2"/><circle cx="1490" cy="268" r="1.5"/><circle cx="930" cy="256" r="1.3"/><circle cx="1302" cy="93" r="1.5"/><circle cx="1537" cy="91" r="1.2"/><circle cx="1181" cy="82" r="1"/>
+  </g>
+  <g id="solar-disc" data-day-layer="" data-cycle-layer="day">
+    <g id="solar-texture" clip-path="url(#solar-surface-clip)">
+      <circle cx="372" cy="338" r="118" fill="url(#sun-surface)"/>
+      <path d="M260 307c61-36 115-39 165-17m-161 75c52-21 104-18 155 3m-126 45c48-13 88-8 126 10" fill="none" stroke="#e98c4e" stroke-opacity=".38" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="326" cy="296" r="8" fill="#fff3b4" opacity=".75"/><circle cx="411" cy="363" r="5" fill="#e9874e" opacity=".5"/>
+      <circle cx="360" cy="402" r="3.5" fill="#fff0a3" opacity=".8"/>
+    </g>
+  </g>
+  <g id="lunar-disc" data-night-layer="" data-cycle-layer="night">
+    <g clip-path="url(#lunar-surface-clip)">
+      <circle cx="1260" cy="319" r="112" fill="#d9f4dc"/>
+      <g id="lunar-craters" fill="#9bcfc2" opacity=".58">
+        <circle cx="1218" cy="282" r="12"/><circle cx="1280" cy="348" r="8"/><circle cx="1234" cy="366" r="5"/>
+      </g>
+      <circle id="lunar-shadow" data-cycle-layer="night" cx="1260" cy="319" r="112" fill="url(#sky)" transform="translate(-224 0)"/>
+    </g>
+  </g>
+  <path id="ridge-back" d="M0 552 180 434l108 63 182-151 158 152 146-111 161 142 161-128 141 111 163-119 200 157v350H0Z" fill="url(#ridge)" opacity=".7"/>
+  <path id="ridge-middle" d="M0 642c190-92 330-91 496-27 161 62 273 44 425-23 178-79 326-61 679 18v290H0Z" fill="#203c49"/>
+  <path id="ridge-water" d="M0 731c220-48 382-53 570 4 188 57 352 52 536-8 163-54 330-45 494-2v175H0Z" fill="url(#water)"/>
+  <g id="botanical-arches" data-day-layer="" data-cycle-layer="day" fill="none" stroke-linecap="round">
+    <path d="M78 632V461c0-118 72-188 164-188s164 70 164 188v171M103 620V469c0-99 53-157 139-157s139 58 139 157v146" stroke="#e0ae67" stroke-opacity=".8" stroke-width="5"/>
+    <path d="M135 625V477c0-76 42-119 107-119s107 43 107 119v148M184 628V478c0-41 22-65 58-65s58 24 58 65v150" stroke="#b2d493" stroke-opacity=".55" stroke-width="2"/>
+    <path d="M78 461h328M102 497h281M141 538h202M174 578h136" stroke="#f4c87b" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M116 622c17-49 33-66 60-82m164 82c-16-49-33-66-60-82M206 627c-5-31-18-48-42-62m125 62c5-31 18-48 42-62" stroke="#b2d493" stroke-width="3"/>
+    <path d="M171 540c-20-17-36-14-43 1 18 14 33 14 43-1Zm161 0c20-17 36-14 43 1-18 14-33 14-43-1Zm-115 27c-17-15-32-13-38 0 16 13 29 13 38 0Zm69 0c17-15 32-13 38 0-16 13-29 13-38 0Z" fill="#9dcb8b" stroke="none"/>
+  </g>
+  <g id="glow-forest" data-night-layer="" data-cycle-layer="night">
+    <g fill="none" stroke-linecap="round">
+      <path d="M944 694c30-99 35-169 10-255m17 131c-35-37-50-70-54-106m66 68c39-40 51-76 49-111M1114 698c24-95 20-156-4-213m2 97c-31-28-42-52-45-82m51 54c30-26 40-50 39-80M1390 709c29-112 33-197 2-288m10 152c-37-36-49-67-49-101m67 62c36-35 47-68 45-98" stroke="#6ab7a4" stroke-width="9"/>
+      <path d="M996 641c-36-11-59-7-74 10 35 17 59 13 74-10Zm19-46c35-16 52-36 52-60-38 12-55 32-52 60Zm82 52c-29-13-49-10-63 5 28 17 49 15 63-5Zm254-34c-35-13-59-9-75 8 34 18 58 15 75-8Zm8-59c34-17 50-39 49-62-37 13-54 34-49 62Z" fill="#8bd4b1" stroke="none"/>
+    </g>
+    <g fill="#a5f8e2" opacity=".34" filter="url(#bloom)"><circle cx="954" cy="561" r="25"/><circle cx="1187" cy="582" r="21"/><circle cx="1402" cy="528" r="28"/><circle cx="1068" cy="535" r="16"/></g>
+    <g fill="#b8ffe9"><circle cx="954" cy="561" r="4"/><circle cx="1187" cy="582" r="3.5"/><circle cx="1402" cy="528" r="4"/><circle cx="1068" cy="535" r="3"/><circle cx="1327" cy="614" r="3"/></g>
+  </g>
+  <g id="landscape">
+    <path d="M0 710c169-19 270-4 411 25 141 30 252 21 374-13 109-30 177-31 275-2 143 42 302 55 540 10v170H0Z" fill="#142c39"/>
+    <path d="M0 795c228-21 359-10 522 18 136 23 271 17 403-10 207-42 387-31 675 15v82H0Z" fill="#102431"/>
+    <path d="M570 760c104-9 191-4 269 8m-248 31c95-8 166-5 238 7m158-48c80 5 138 3 207-9" fill="none" stroke="#81d7cb" stroke-opacity=".32" stroke-width="2"/>
+    <path d="M0 827c218-14 319-6 444 11m705-12c127-19 274-18 451 3" fill="none" stroke="#e9b876" stroke-opacity=".32" stroke-width="2"/>
+  </g>
+  <g id="day-gold-traces" data-day-layer="" data-cycle-layer="day" fill="#ffc977" opacity=".7"><circle cx="496" cy="701" r="3"/><circle cx="527" cy="719" r="2"/><circle cx="467" cy="733" r="2"/></g>
+  <style>
+    #day-sky-gradient stop:first-child { stop-color: #f8d991; }
+    svg[data-mode="day"] #night-sky { opacity: 0; }
+    svg[data-mode="night"] [data-day-layer] { opacity: 0; }
+    svg[data-mode="night"] [data-night-layer] { opacity: 1; }
+    svg[data-mode="day"] [data-night-layer] { opacity: 0; }
+    svg[data-mode="day"] [data-day-layer] { opacity: 1; }
+    svg[data-mode="night"] #day-sky { opacity: 0; }
+    svg[data-mode="night"] #lunar-shadow { transform: translateX(-224px); }
+    #lunar-shadow { transform-box: fill-box; }
+    svg[data-mode="cycle"] [data-cycle-layer="day"] { animation: solar-lunar-cycle-day 48s linear infinite; }
+    svg[data-mode="cycle"] [data-cycle-layer="night"] { animation: solar-lunar-cycle-night 48s linear infinite; }
+    svg[data-mode="cycle"] #solar-disc {
+      animation: solar-disc-visibility 48s linear infinite, solar-disc-orbit 48s linear infinite;
+    }
+    svg[data-mode="cycle"] #lunar-disc {
+      animation: lunar-disc-visibility 48s linear infinite, lunar-night-orbit 48s linear infinite;
+    }
+    svg[data-mode="cycle"] #lunar-shadow { animation: lunar-shadow-phase 48s linear infinite; }
+    svg[data-running="false"] [data-cycle-layer], svg[data-running="true"] [data-cycle-layer] { animation-play-state: paused; }
+    svg[data-running="true"] [data-cycle-layer] { animation-play-state: running; }
+    @keyframes solar-lunar-cycle-day {
+      0%, 45.833% { opacity: 1; }
+      50%, 95.833% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes solar-lunar-cycle-night {
+      0%, 45.833% { opacity: 0; }
+      50%, 95.833% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes solar-disc-visibility {
+      0%, 45.833% { opacity: 1; }
+      50%, 95.833% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes lunar-disc-visibility {
+      0%, 50% { opacity: 0; }
+      56.25%, 91.667% { opacity: 1; }
+      95.833%, 100% { opacity: 0; }
+    }
+    @keyframes solar-disc-orbit {
+      0% { transform: translate(0, 0); }
+      12.5% { transform: translate(222px, -100px); }
+      25% { transform: translate(444px, -150px); }
+      37.5% { transform: translate(666px, -100px); }
+      45.833% { transform: translate(840px, -20px); }
+      50% { transform: translate(888px, 0); }
+      56.25% { transform: translate(666px, 300px); }
+      62.5% { transform: translate(444px, 362px); }
+      75% { transform: translate(222px, 362px); }
+      87.5% { transform: translate(0, 300px); }
+      91.667% { transform: translate(0, 200px); }
+      95.833%, 100% { transform: translate(0, 0); }
+    }
+    @keyframes lunar-night-orbit {
+      0%, 50% { transform: translate(-888px, 0); }
+      56.25% { transform: translate(-777px, -50px); }
+      62.5% { transform: translate(-666px, -100px); }
+      75% { transform: translate(-444px, -150px); }
+      87.5% { transform: translate(-222px, -100px); }
+      91.667% { transform: translate(0, 0); }
+      95.833% { transform: translate(0, 300px); }
+      100% { transform: translate(-888px, 0); }
+    }
+    @keyframes lunar-shadow-phase {
+      0%, 50% { transform: translateX(0); }
+      56.25% { transform: translateX(-18px); }
+      62.5% { transform: translateX(-35px); }
+      75% { transform: translateX(-90.5px); }
+      87.5% { transform: translateX(-166.5px); }
+      91.667%, 95.833% { transform: translateX(-224px); }
+      100% { transform: translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      svg[data-mode="cycle"] [data-cycle-layer] { animation-play-state: paused !important; }
+    }
+  </style>
+</svg>
