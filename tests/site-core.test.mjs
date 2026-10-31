@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { filterCatalog, heroSceneMode, readPreferences, resolveMotion } from '../src/site-core.mjs';
+import { filterCatalog, heroSceneMode, readPreferences, resolveMotion, resolveCoacusBlobUrl, COACUS_REPO_BLOB_BASE } from '../src/site-core.mjs';
 
 const storageWith = (value) => ({
   getItem: () => JSON.stringify(value),
@@ -46,4 +46,11 @@ test('catalog search filters all resource kinds without mutating source records'
   assert.deepEqual(filterCatalog(entries, { query: 'lunarpunk' }), [entries[0]]);
   assert.deepEqual(filterCatalog(entries, { query: 'NOCTÚRNAL' }), [entries[0]]);
   assert.deepEqual(entries, snapshot);
+});
+
+test('resolveCoacusBlobUrl builds canonical github blob links safely', () => {
+  assert.equal(resolveCoacusBlobUrl('knowledge/skills/design/color/SKILL.md'), `${COACUS_REPO_BLOB_BASE}/knowledge/skills/design/color/SKILL.md`);
+  assert.equal(resolveCoacusBlobUrl('/knowledge/agents/ui/agent.source.md'), `${COACUS_REPO_BLOB_BASE}/knowledge/agents/ui/agent.source.md`);
+  assert.equal(resolveCoacusBlobUrl(''), COACUS_REPO_BLOB_BASE);
+  assert.equal(resolveCoacusBlobUrl(null), COACUS_REPO_BLOB_BASE);
 });
