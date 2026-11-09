@@ -2,7 +2,7 @@
 
 ## Relato de vulnerabilidades
 
-Não publique detalhes de uma vulnerabilidade não corrigida em uma issue pública. Use a opção **Report a vulnerability** na aba Security do repositório GitHub para enviar um relato privado. Inclua passos de reprodução, impacto e, se possível, uma correção sugerida. Essa opção será habilitada nas configurações do repositório após sua criação; até lá, envie uma mensagem privada ao mantenedor pelo GitHub.
+Não publique detalhes de uma vulnerabilidade não corrigida em uma issue pública. Use [**Report a vulnerability**](https://github.com/dandgabr/showcase/security/advisories/new) para enviar um relato privado. Esse recurso está habilitado neste repositório. Inclua passos de reprodução, impacto e, se possível, uma correção sugerida.
 
 ## Escopo
 

@@ -1,4 +1,4 @@
-import { filterCatalog, heroSceneMode, readPreferences, resolveMotion } from './site-core.mjs';
+import { filterCatalog, heroSceneMode, readPreferences, resolveMotion, resolveCoacusBlobUrl } from './site-core.mjs';
 import { CATALOG_COUNT_KEYS, COACUS_CATALOG_URL, createCatalogLoadSequence, createIndexedDbCatalogStore, normalizeCoacusCatalog, startCatalogLoad } from './catalog-cache.mjs';
 import { getLocale, getLocalePreference, readLocalePreference, setLocalePreference, subscribeLocale, t } from './i18n.mjs';
 
@@ -383,7 +383,7 @@ function setupStoryScroll() {
   if (!chapters.length || !progress || !fill) return;
   progress.hidden = false;
 
-  const revealTargets = document.querySelectorAll('.hero-copy, .world-stage, .section-head, .ecosystem-panorama, .lab-grid, .constellation-layout, .atlas-shell, .closing h2, .closing-copy, .closing-credits');
+  const revealTargets = document.querySelectorAll('.hero-copy, .world-stage, .section-head, .ecosystem-panorama, .lab-grid, .constellation-layout, .atlas-shell, .closing h2, .closing-copy, .closing-actions, .closing-credits');
   let revealObserver = null;
   if (mediaReduce.matches || typeof window.IntersectionObserver !== 'function') {
     revealTargets.forEach((target) => { target.dataset.storyReveal = ''; target.classList.add('is-revealed'); });
@@ -582,30 +582,14 @@ function makeCatalogCard(entry) {
   source.title = sourcePath;
   origin.append(source);
   if (sourcePath !== 'origem indisponível') {
-    const copy = document.createElement('button');
-    copy.type = 'button';
-    copy.className = 'catalog-copy';
-    copy.textContent = t('catalog.copy');
-    copy.setAttribute('aria-label', t('catalog.copyAria', { name: entry.name }));
-    copy.addEventListener('click', async () => {
-      let copied = false;
-      try { await navigator.clipboard?.writeText(sourcePath); copied = Boolean(navigator.clipboard?.writeText); } catch { /* Fall back for restricted clipboard permissions. */ }
-      if (!copied) {
-        const temporary = document.createElement('textarea');
-        temporary.value = sourcePath;
-        temporary.setAttribute('readonly', '');
-        temporary.setAttribute('aria-hidden', 'true');
-        temporary.style.position = 'fixed';
-        temporary.style.opacity = '0';
-        document.body.append(temporary);
-        temporary.select();
-        try { copied = document.execCommand('copy'); } catch { copied = false; }
-        temporary.remove();
-        copy.focus({ preventScroll: true });
-      }
-      announce(copied ? t('catalog.copied', { name: entry.name }) : t('catalog.copyFail'));
-    });
-    origin.append(copy);
+    const link = document.createElement('a');
+    link.className = 'catalog-link';
+    link.href = resolveCoacusBlobUrl(sourcePath);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = t('catalog.open');
+    link.setAttribute('aria-label', t('catalog.openAria', { name: entry.name }));
+    origin.append(link);
   }
   article.append(badge, body, origin);
   return article;
@@ -627,11 +611,11 @@ function refreshCatalogLocale() {
     const kind = card.dataset.kind;
     const badge = card.querySelector('.catalog-kind');
     if (badge) badge.textContent = t(`catalog.kind.${kind}`);
-    const copy = card.querySelector('.catalog-copy');
-    if (copy) {
+    const link = card.querySelector('.catalog-link');
+    if (link) {
       const name = card.querySelector('h3')?.textContent ?? '';
-      copy.textContent = t('catalog.copy');
-      copy.setAttribute('aria-label', t('catalog.copyAria', { name }));
+      link.textContent = t('catalog.open');
+      link.setAttribute('aria-label', t('catalog.openAria', { name }));
     }
   });
 }

@@ -38,3 +38,11 @@ export function filterCatalog(entries, { kind = 'all', query = '' } = {}) {
     return matchesKind && (!needle || haystack.includes(needle));
   });
 }
+
+export const COACUS_REPO_BLOB_BASE = 'https://github.com/dandgabr/Coacus/blob/main';
+
+export function resolveCoacusBlobUrl(path, base = COACUS_REPO_BLOB_BASE) {
+  if (!path || typeof path !== 'string') return base;
+  const sanitized = path.replace(/^\/+/, '').trim();
+  return `${base}/${encodeURI(sanitized)}`;
+}
